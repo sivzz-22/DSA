@@ -1,0 +1,53 @@
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // code here
+        int max = -1;
+        int sec_max = -1; //GFG wants to return -1 if the both max and sec_max are same
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>max){
+                sec_max=max;
+                max=arr[i];
+            }
+            else if(arr[i]>sec_max && arr[i]!=max){ // arr[i]!=max -> Checking is imp...bcz (1)
+                sec_max=arr[i];
+            }
+        }
+        return sec_max;
+    }
+}
+
+/*
+
+1) if the arrray has same elements as large...then second element will not be updated...
+
+2)IF the array has negative numbers :
+
+class Solution {
+    public int getSecondLargest(int[] arr) {
+
+        int largest = Integer.MIN_VALUE; 
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            }
+            else if (num > secondLargest && num != largest) {
+                secondLargest = num;
+            }
+
+        }
+
+        return (secondLargest == Integer.MIN_VALUE) ? -1 : secondLargest;  -> return -1 if the condition is true or return the value
+    }
+}
+
+*/
+
+NOTE :
+
+Time complexity : O(n) 
+
+Can be sorted and then accessed...but sorting need n log n time complexity....

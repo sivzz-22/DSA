@@ -12,3 +12,10 @@ class Solution {
         return max; // return must as the function is int.
     }
 }
+
+
+
+NOTE :
+
+Time complexity : O(n) -> Every elements will be traversed atleast once 
+
