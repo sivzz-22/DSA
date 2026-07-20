@@ -1,0 +1,14 @@
+class Solution {
+    public static int largest(int[] arr) {
+        
+        int max=arr[0];  // max = 0 -> wrong : If the array has negative values then those will not be solved...
+                         // max = Integer.MIN_VALUE ; -> This assigns the smallest integer value to the max.... 
+
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+        return max; // return must as the function is int.
+    }
+}
