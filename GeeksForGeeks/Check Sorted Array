@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isSorted(int[] arr) {
+        // code here
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]>arr[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+/*
+
+If we are using arr[i+1] then we should give arr.length-1
+Without declaring the arr.length-1...It will index out of bound in runtime ....
+
+*/
