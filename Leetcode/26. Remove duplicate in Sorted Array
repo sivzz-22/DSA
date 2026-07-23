@@ -1,27 +1,24 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int i=0;
-
-        if(nums.length==0){
-            return 0;
-        }
-        for(int j=1;j<nums.length;j++){
+        int j=0;
+        for(int i=1;i<nums.length;i++){
             if(nums[i]!=nums[j]){
-                i++;
-                nums[i]=nums[j];
+                j++;
+                nums[j]=nums[i];
             }
         }
-        return i+1;
-
+        return j+1;
     }
 }
+
+
 
 /*
 
 Two pointer apporach
 
-1 st we need to set 'i' as the unique value 
-Then we need to compare the i with the next element j ...If both are same we increment j....
+1 st we need to set 'j' as the unique value 
+Then we need to compare the j with the next element i ...If both are same we increment j....
 If i anf j are not same...They are unique..we need to change the unique value i to the next i++
 then the value of j is assigned to i ....then j incremented
 
