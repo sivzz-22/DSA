@@ -1,0 +1,34 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i=0;
+
+        if(nums.length==0){
+            return 0;
+        }
+        for(int j=1;j<nums.length;j++){
+            if(nums[i]!=nums[j]){
+                i++;
+                nums[i]=nums[j];
+            }
+        }
+        return i+1;
+
+    }
+}
+
+/*
+
+Two pointer apporach
+
+1 st we need to set 'i' as the unique value 
+Then we need to compare the i with the next element j ...If both are same we increment j....
+If i anf j are not same...They are unique..we need to change the unique value i to the next i++
+then the value of j is assigned to i ....then j incremented
+
+-------------------------------------------------------------------------------------------------------
+
+Time complexity - O(n)
+Space complexity - O(1)
+
+
+*/
